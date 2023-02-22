@@ -1,0 +1,133 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: blue;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .navbar a{
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown{
+            float: left;
+            overflow: hidden;
+        }
+        
+        .dropdown .dropbtn{
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+            background-color: red;
+        }
+
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: none;
+            box-shadow: 0px, 8px, 16px, 0px, rgba(3, 143, 99, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a{
+            float: none;
+            color: black;
+            padding: 12px, 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: ddd#f9f9f9;
+        }
+
+        .show{
+            display: block;
+        }
+
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 15;
+            overflow: hidden;
+            background-color: rgba(7, 166, 126, 0.751);
+        }
+
+        li{
+            float: left;
+        }
+
+        li a{
+            display: block;
+            color: rgb(246, 170, 28);
+            text-align: center;
+            padding: 14px, 16px;
+            text-decoration: none;
+        }
+
+        li a:hover{
+            background-color: rgba(109, 203, 232, 0.646);
+        }
+
+        button {
+            display: block;
+            color: rgb(246, 170, 28);
+            text-align: center;
+            padding: 14px, 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <ul>
+        <li><a class="active" href="MainPage.html">Home</a></li> 
+        <div class="dropdown">
+            <button class="dropbtn" onclick="dropMenu()">Members
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#"Anton></a>
+            </div>
+        </div>
+        <li><a href="Teams">Teams</a></li>
+        <li><a href="ContactUs">Contact Us</a></li>
+        <li><a href="About">About</a></li>
+    </ul>
+</div>
+
+<script>
+    function dropMenu(){
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(e) {
+        if(!e.target.matches('.dropbtn')) {
+            var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')){
+                myDropdown.classList.remove('show');
+            }
+        }
+    }
+</script>
+</body>
+</html>
